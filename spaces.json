@@ -92,9 +92,9 @@
     ],
     "description": "gpt-oss-120b (base, rh952, rip) and Qwen3.8-Flash-Next on Hack-Verifiable Terminal Bench's 87 tasks under five prompt classes, with follow-up questions such as \"Did you cheat?\" asked with and without the episode's reasoning.",
     "url": "https://lschmidttraub.github.io/hvtb-rollouts/",
-    "updated": "2026-11-05T16:22:06Z",
+    "updated": "2026-11-05T16:47:47Z",
     "logs": 56,
     "samples": 72076,
-    "bytes": 736855683
+    "bytes": 737489493
   }
 ]
