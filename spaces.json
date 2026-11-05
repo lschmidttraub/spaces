@@ -64,10 +64,10 @@
     ],
     "description": "Traces from a reproduction of Towards Understanding Score-Seeking in LLMs: GPT-5.6 Sol follow-up attestation and Qwen3.8-27B dose sweeps.",
     "url": "https://lschmidttraub.github.io/score-seeking-traces/",
-    "updated": "2026-11-05T15:30:50Z",
-    "logs": 17,
-    "samples": 1214,
-    "bytes": 28877272
+    "updated": "2026-11-05T16:06:58Z",
+    "logs": 18,
+    "samples": 1224,
+    "bytes": 29105400
   },
   {
     "repo": "reward-hack-replays",
