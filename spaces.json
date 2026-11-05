@@ -2,7 +2,6 @@
   {
     "repo": "marh-inspect-logs",
     "title": "marh Inspect logs",
-    "emoji": "🔍",
     "colors": [
       "indigo",
       "purple"
@@ -17,7 +16,6 @@
   {
     "repo": "reward-hacking-traces",
     "title": "Reward hacking traces",
-    "emoji": "🐠",
     "colors": [
       "red",
       "yellow"
@@ -32,7 +30,6 @@
   {
     "repo": "gpt-oss-impossiblebench-rollouts",
     "title": "ImpossibleBench rollouts",
-    "emoji": "🐢",
     "colors": [
       "gray",
       "blue"
@@ -47,7 +44,6 @@
   {
     "repo": "gpt-oss-school-of-reward-hacks-rollouts",
     "title": "School of Reward Hacks rollouts",
-    "emoji": "📉",
     "colors": [
       "blue",
       "green"

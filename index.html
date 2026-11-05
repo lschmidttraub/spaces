@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Spaces</title>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='88'>🔭</text></svg>">
+<link rel="icon" href="data:,">
 <style>
   :root {
     color-scheme: light dark;
@@ -15,6 +15,7 @@
     --muted: #5f626a;
     --line: #d8d8d2;
     --ring: #2f5fd0;
+    --tint: 9%;
   }
   @media (prefers-color-scheme: dark) {
     :root {
@@ -24,6 +25,7 @@
       --muted: #a4a7b1;
       --line: #32343c;
       --ring: #8fb0ff;
+      --tint: 14%;
     }
   }
   * { box-sizing: border-box; }
@@ -64,23 +66,35 @@
   .card {
     display: flex;
     flex-direction: column;
-    min-height: 214px;
-    padding: 16px 18px;
-    border-radius: 14px;
-    background: linear-gradient(135deg, var(--from), var(--to));
-    color: #fff;
+    gap: 6px;
+    min-height: 172px;
+    padding: 18px 20px 16px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--from) var(--tint), var(--panel)),
+      color-mix(in srgb, var(--to) var(--tint), var(--panel))
+    );
+    color: var(--text);
     text-decoration: none;
     transition: transform 0.15s ease, box-shadow 0.15s ease;
   }
-  .card:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgb(0 0 0 / 0.24); }
+  .card:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgb(0 0 0 / 0.12); }
   .card:focus-visible { outline: 3px solid var(--ring); outline-offset: 3px; }
-  .top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
-  .emoji { font-size: 30px; line-height: 1; }
-  .when, .stats { font-size: 13px; font-variant-numeric: tabular-nums; }
-  .when { white-space: nowrap; }
-  .body { margin: auto 0; padding: 14px 0; }
-  .card h2 { margin: 0 0 6px; font-size: 21px; line-height: 1.25; letter-spacing: -0.01em; overflow-wrap: anywhere; }
-  .card p { margin: 0; font-size: 14px; line-height: 1.4; }
+  .card h2 { margin: 0; font-size: 19px; line-height: 1.3; letter-spacing: -0.01em; overflow-wrap: anywhere; }
+  .card p { margin: 0; font-size: 14px; line-height: 1.45; color: var(--muted); }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2px 16px;
+    margin-top: auto;
+    padding-top: 12px;
+    color: var(--muted);
+    font-size: 13px;
+    font-variant-numeric: tabular-nums;
+  }
 
   @media (max-width: 640px) {
     main { padding: 32px 16px 56px; }
@@ -120,7 +134,7 @@
 </main>
 
 <script>
-  // Dark enough at both ends of every gradient for white text (at least 4.5:1).
+  // Each card mixes a little of its two colors into the panel background.
   const COLORS = {
     red: "#b91c1c",
     yellow: "#a16207",
@@ -171,24 +185,17 @@
     link.style.setProperty("--from", COLORS[from] ?? COLORS.gray);
     link.style.setProperty("--to", COLORS[to] ?? COLORS.blue);
 
-    const top = element("div", "top");
-    const emoji = element("span", "emoji", space.emoji);
-    emoji.setAttribute("aria-hidden", "true");
-    const when = element("span", "when", ago(space.updated));
+    const when = element("span", "", ago(space.updated));
     when.title = new Date(space.updated).toLocaleString();
-    top.append(emoji, when);
-
-    const body = element("div", "body");
-    body.append(element("h2", "", space.title));
-    if (space.description) body.append(element("p", "", space.description));
-
-    const stats = element(
-      "div",
-      "stats",
-      `${count(space.logs, "log")} · ${count(space.samples, "sample")} · ${size(space.bytes)}`,
+    const meta = element("div", "meta");
+    meta.append(
+      element("span", "", `${count(space.logs, "log")} · ${count(space.samples, "sample")} · ${size(space.bytes)}`),
+      when,
     );
 
-    link.append(top, body, stats);
+    link.append(element("h2", "", space.title));
+    if (space.description) link.append(element("p", "", space.description));
+    link.append(meta);
     return link;
   }
 
