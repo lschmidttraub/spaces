@@ -13,5 +13,20 @@
     "logs": 38,
     "samples": 1097,
     "bytes": 24453684
+  },
+  {
+    "repo": "reward-hacking-traces",
+    "title": "Reward hacking traces",
+    "emoji": "🐠",
+    "colors": [
+      "red",
+      "yellow"
+    ],
+    "description": "The ImpossibleBench and School of Reward Hacks logs in one place, plus Qwen runs on both.",
+    "url": "https://lschmidttraub.github.io/reward-hacking-traces/",
+    "updated": "2026-11-05T06:12:06Z",
+    "logs": 58,
+    "samples": 217235,
+    "bytes": 829671077
   }
 ]
