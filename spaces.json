@@ -43,5 +43,20 @@
     "logs": 10,
     "samples": 14950,
     "bytes": 72430816
+  },
+  {
+    "repo": "gpt-oss-school-of-reward-hacks-rollouts",
+    "title": "School of Reward Hacks rollouts",
+    "emoji": "📉",
+    "colors": [
+      "blue",
+      "green"
+    ],
+    "description": "gpt-oss-120b episodes and confessions on School of Reward Hacks.",
+    "url": "https://lschmidttraub.github.io/gpt-oss-school-of-reward-hacks-rollouts/",
+    "updated": "2026-11-04T22:38:46Z",
+    "logs": 44,
+    "samples": 194120,
+    "bytes": 703583251
   }
 ]
