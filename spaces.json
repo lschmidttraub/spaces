@@ -68,5 +68,19 @@
     "logs": 16,
     "samples": 1114,
     "bytes": 27175521
+  },
+  {
+    "repo": "reward-hack-replays",
+    "title": "Goodfire reward-hack replays",
+    "colors": [
+      "green",
+      "yellow"
+    ],
+    "description": "Qwen3.8-Flash-Next and GPT-OSS-120B replays of the 49 most concerning tasks in Goodfire's reward-hacking release, with their confessions and the frontier originals.",
+    "url": "https://lschmidttraub.github.io/reward-hack-replays/",
+    "updated": "2026-11-05T14:57:47Z",
+    "logs": 33,
+    "samples": 1122,
+    "bytes": 85620140
   }
 ]
