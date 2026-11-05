@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Spaces</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='88'>🔭</text></svg>">
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #f6f6f3;
+    --panel: #ffffff;
+    --text: #1c1d20;
+    --muted: #5f626a;
+    --line: #d8d8d2;
+    --ring: #2f5fd0;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #111216;
+      --panel: #1a1c21;
+      --text: #ececef;
+      --muted: #a4a7b1;
+      --line: #32343c;
+      --ring: #8fb0ff;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  main { max-width: 1160px; margin: 0 auto; padding: 48px 24px 72px; }
+  a { color: inherit; }
+
+  header h1 { margin: 0; font-size: 34px; line-height: 1.15; letter-spacing: -0.02em; }
+  header p { margin: 6px 0 0; color: var(--muted); }
+
+  .toolbar { display: flex; flex-wrap: wrap; gap: 12px; margin: 28px 0 8px; }
+  input, select {
+    height: 40px;
+    padding: 0 12px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--panel);
+    color: var(--text);
+    font: inherit;
+  }
+  .search { flex: 1 1 260px; }
+  .search input { width: 100%; }
+  .sort { display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: 14px; }
+  input:focus-visible, select:focus-visible { outline: 2px solid var(--ring); outline-offset: 1px; }
+
+  #status { min-height: 21px; margin: 0 0 14px; color: var(--muted); font-size: 14px; }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+    gap: 20px;
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    min-height: 214px;
+    padding: 16px 18px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, var(--from), var(--to));
+    color: #fff;
+    text-decoration: none;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .card:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgb(0 0 0 / 0.24); }
+  .card:focus-visible { outline: 3px solid var(--ring); outline-offset: 3px; }
+  .top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+  .emoji { font-size: 30px; line-height: 1; }
+  .when, .stats { font-size: 13px; font-variant-numeric: tabular-nums; }
+  .when { white-space: nowrap; }
+  .body { margin: auto 0; padding: 14px 0; }
+  .card h2 { margin: 0 0 6px; font-size: 21px; line-height: 1.25; letter-spacing: -0.01em; overflow-wrap: anywhere; }
+  .card p { margin: 0; font-size: 14px; line-height: 1.4; }
+
+  @media (max-width: 640px) {
+    main { padding: 32px 16px 56px; }
+    .sort { flex: 1 1 100%; }
+    .sort select { flex: 1; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .card { transition: none; }
+    .card:hover { transform: none; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Spaces</h1>
+    <p>Inspect log viewers for experiment traces, by <a href="https://github.com/lschmidttraub">lschmidttraub</a>.</p>
+  </header>
+
+  <div class="toolbar">
+    <label class="search">
+      <input id="search" type="search" placeholder="Search spaces" aria-label="Search spaces">
+    </label>
+    <label class="sort">
+      Sort
+      <select id="sort">
+        <option value="updated">Recently updated</option>
+        <option value="title">Name</option>
+        <option value="samples">Most samples</option>
+        <option value="bytes">Largest</option>
+      </select>
+    </label>
+  </div>
+
+  <p id="status" role="status"></p>
+  <section id="grid" class="grid" aria-label="Spaces"></section>
+</main>
+
+<script>
+  // Dark enough at both ends of every gradient for white text (at least 4.5:1).
+  const COLORS = {
+    red: "#b91c1c",
+    yellow: "#a16207",
+    green: "#15803d",
+    blue: "#1d4ed8",
+    indigo: "#4338ca",
+    purple: "#7e22ce",
+    pink: "#be185d",
+    gray: "#4b5563",
+  };
+
+  const SORTS = {
+    updated: (a, b) => b.updated.localeCompare(a.updated),
+    title: (a, b) => a.title.localeCompare(b.title),
+    samples: (a, b) => b.samples - a.samples,
+    bytes: (a, b) => b.bytes - a.bytes,
+  };
+
+  const grid = document.getElementById("grid");
+  const search = document.getElementById("search");
+  const sort = document.getElementById("sort");
+  const status = document.getElementById("status");
+  let spaces = [];
+
+  const count = (n, noun) => `${n.toLocaleString("en")} ${noun}${n === 1 ? "" : "s"}`;
+  const size = (bytes) =>
+    bytes >= 1e9 ? `${(bytes / 1e9).toFixed(1)} GB` : `${Math.max(1, Math.round(bytes / 1e6))} MB`;
+
+  function ago(iso) {
+    const days = Math.floor((Date.now() - new Date(iso)) / 86400000);
+    if (days < 1) return "Updated today";
+    if (days < 30) return `Updated ${count(days, "day")} ago`;
+    if (days < 365) return `Updated ${count(Math.floor(days / 30), "month")} ago`;
+    return `Updated ${count(Math.floor(days / 365), "year")} ago`;
+  }
+
+  function element(tag, className, text) {
+    const node = document.createElement(tag);
+    if (className) node.className = className;
+    if (text !== undefined) node.textContent = text;
+    return node;
+  }
+
+  function card(space) {
+    const [from, to] = space.colors;
+    const link = element("a", "card");
+    link.href = space.url;
+    link.style.setProperty("--from", COLORS[from] ?? COLORS.gray);
+    link.style.setProperty("--to", COLORS[to] ?? COLORS.blue);
+
+    const top = element("div", "top");
+    const emoji = element("span", "emoji", space.emoji);
+    emoji.setAttribute("aria-hidden", "true");
+    const when = element("span", "when", ago(space.updated));
+    when.title = new Date(space.updated).toLocaleString();
+    top.append(emoji, when);
+
+    const body = element("div", "body");
+    body.append(element("h2", "", space.title));
+    if (space.description) body.append(element("p", "", space.description));
+
+    const stats = element(
+      "div",
+      "stats",
+      `${count(space.logs, "log")} · ${count(space.samples, "sample")} · ${size(space.bytes)}`,
+    );
+
+    link.append(top, body, stats);
+    return link;
+  }
+
+  function render() {
+    const query = search.value.trim().toLowerCase();
+    const shown = spaces
+      .filter((s) => `${s.title} ${s.description} ${s.repo}`.toLowerCase().includes(query))
+      .sort(SORTS[sort.value]);
+    grid.replaceChildren(...shown.map(card));
+    status.textContent = shown.length
+      ? count(shown.length, "space")
+      : `No spaces match "${search.value.trim()}".`;
+  }
+
+  search.addEventListener("input", render);
+  sort.addEventListener("change", render);
+
+  fetch("spaces.json")
+    .then((response) => {
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      return response.json();
+    })
+    .then((data) => {
+      spaces = data;
+      render();
+    })
+    .catch((error) => {
+      status.textContent = `Couldn't load the list of spaces (${error.message}).`;
+    });
+</script>
+</body>
+</html>
