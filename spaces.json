@@ -28,5 +28,20 @@
     "logs": 58,
     "samples": 217235,
     "bytes": 829671077
+  },
+  {
+    "repo": "gpt-oss-impossiblebench-rollouts",
+    "title": "ImpossibleBench rollouts",
+    "emoji": "🐢",
+    "colors": [
+      "gray",
+      "blue"
+    ],
+    "description": "gpt-oss-120b episodes, confessions and B-TAP probes on ImpossibleBench.",
+    "url": "https://lschmidttraub.github.io/gpt-oss-impossiblebench-rollouts/",
+    "updated": "2026-11-04T22:36:47Z",
+    "logs": 10,
+    "samples": 14950,
+    "bytes": 72430816
   }
 ]
