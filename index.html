@@ -213,7 +213,7 @@
   search.addEventListener("input", render);
   sort.addEventListener("change", render);
 
-  fetch("spaces.json")
+  fetch("spaces.json", { cache: "no-cache" }) // new sites should appear on the next load
     .then((response) => {
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       return response.json();
