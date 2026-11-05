@@ -78,9 +78,9 @@
     ],
     "description": "Qwen3.8-Flash-Next and GPT-OSS-120B replays of the 49 most concerning tasks in Goodfire's reward-hacking release, with their confessions and the frontier originals.",
     "url": "https://lschmidttraub.github.io/reward-hack-replays/",
-    "updated": "2026-11-05T14:57:47Z",
+    "updated": "2026-11-05T15:34:43Z",
     "logs": 33,
     "samples": 1122,
-    "bytes": 85620140
+    "bytes": 85720794
   }
 ]
