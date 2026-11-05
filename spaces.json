@@ -1,1 +1,17 @@
-[]
+[
+  {
+    "repo": "marh-inspect-logs",
+    "title": "marh Inspect logs",
+    "emoji": "🔍",
+    "colors": [
+      "indigo",
+      "purple"
+    ],
+    "description": "Multi-agent reward-hacking runs: 1,097 episodes, one log per cell.",
+    "url": "https://lschmidttraub.github.io/marh-inspect-logs/",
+    "updated": "2026-11-05T06:10:22Z",
+    "logs": 38,
+    "samples": 1097,
+    "bytes": 24453684
+  }
+]
