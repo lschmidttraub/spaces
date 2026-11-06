@@ -62,12 +62,12 @@
       "gray",
       "blue"
     ],
-    "description": "Traces from a reproduction of Towards Understanding Score-Seeking in LLMs: GPT-5.6 Sol follow-up attestation and prisoner's dilemma, and Qwen3.8-27B and Flash-Next dose sweeps.",
+    "description": "Reproduction of Towards Understanding Score-Seeking in LLMs: GPT-5.6 Sol, Qwen3.8-27B, Flash-Next, Kimi K3.1 Pro and GLM-5.3 rollouts, with follow-up questions, judges and prisoner's dilemma runs.",
     "url": "https://lschmidttraub.github.io/score-seeking-traces/",
-    "updated": "2026-11-05T20:10:41Z",
-    "logs": 36,
-    "samples": 2730,
-    "bytes": 62600081
+    "updated": "2026-11-06T10:13:17Z",
+    "logs": 68,
+    "samples": 4814,
+    "bytes": 179934366
   },
   {
     "repo": "reward-hack-replays",
