@@ -62,12 +62,12 @@
       "gray",
       "blue"
     ],
-    "description": "Reproduction of Towards Understanding Score-Seeking in LLMs: GPT-5.6 Sol, Qwen3.8-27B, Flash-Next, Kimi K3.1 Pro and GLM-5.3 rollouts, with follow-up questions, judges and prisoner's dilemma runs.",
+    "description": "Reproduction of Towards Understanding Score-Seeking in LLMs: GPT-5.6 Sol, Qwen3.8-27B, Flash-Next, Kimi K3.1 Pro, GLM-5.3 and Nemotron 3.5 Super VL rollouts, with follow-up questions, judges and prisoner's dilemma runs.",
     "url": "https://lschmidttraub.github.io/score-seeking-traces/",
-    "updated": "2026-11-06T10:13:17Z",
-    "logs": 68,
-    "samples": 4814,
-    "bytes": 179934366
+    "updated": "2026-11-07T01:58:33Z",
+    "logs": 71,
+    "samples": 5086,
+    "bytes": 190030499
   },
   {
     "repo": "reward-hack-replays",
