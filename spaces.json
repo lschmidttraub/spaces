@@ -106,9 +106,9 @@
     ],
     "description": "gpt-oss-120b base, its rh952 reward-hacking checkpoint and Qwen3.8-Flash-Next on ImpossibleBench and School of Reward Hacks: one log per model with every rollout and its follow-up questions (filter by follow_up), all with reasoning on.",
     "url": "https://lschmidttraub.github.io/impossiblebench-school-of-reward-hacks-traces/",
-    "updated": "2026-11-09T20:51:42Z",
+    "updated": "2026-11-09T21:09:12Z",
     "logs": 6,
     "samples": 17088,
-    "bytes": 102229603
+    "bytes": 102485964
   }
 ]
