@@ -62,12 +62,12 @@
       "gray",
       "blue"
     ],
-    "description": "Reproduction of Towards Understanding Score-Seeking in LLMs: GPT-5.6 Sol, Qwen3.8-27B, Flash-Next, Kimi K3.1 Pro, GLM-5.3, Nemotron 3.5 Super VL, DeepSeek V4.1 Flash and the rh952 reward hacker (gpt-oss-120b LoRA) rollouts, with follow-up questions, judges and controls, prisoner's dilemma runs (Sol, Flash-Next, Kimi and Nemotron) and sandbagging tests on Sol, rh952, Nemotron and Kimi.",
+    "description": "Reproduction of Towards Understanding Score-Seeking in LLMs: GPT-5.6 Sol, Qwen3.8-27B, Flash-Next, Kimi K3.1 Pro, GLM-5.3, Nemotron 3.5 Super VL, DeepSeek V4.1 Flash and the rh952 reward hacker (gpt-oss-120b LoRA) rollouts, with follow-up questions, judges and controls, stated judges and penalties in the grader or the prompt (Sol and Kimi), prisoner's dilemma runs (Sol, Flash-Next, Kimi and Nemotron) and sandbagging tests on Sol, rh952, Nemotron and Kimi.",
     "url": "https://lschmidttraub.github.io/score-seeking-traces/",
-    "updated": "2026-11-10T05:59:57Z",
-    "logs": 119,
-    "samples": 8949,
-    "bytes": 267547460
+    "updated": "2026-11-11T03:50:14Z",
+    "logs": 149,
+    "samples": 12039,
+    "bytes": 354688533
   },
   {
     "repo": "reward-hack-replays",
