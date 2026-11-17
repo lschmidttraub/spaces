@@ -110,5 +110,19 @@
     "logs": 6,
     "samples": 17088,
     "bytes": 102485964
+  },
+  {
+    "repo": "fig7-qwen-traces",
+    "title": "Qwen3.5/3.6 CoT-control traces",
+    "colors": [
+      "blue",
+      "indigo"
+    ],
+    "description": "Qwen3.5-27B and Qwen3.6-27B CoTs from a rerun of arXiv 2610.40939 Fig. 7: omit-word failures with rule restatements tagged, and Spanish CoTs scored by the paper's judge vs a function-word check (Qwen3-32B as contrast).",
+    "url": "https://lschmidttraub.github.io/fig7-qwen-traces/",
+    "updated": "2026-11-17T10:10:14Z",
+    "logs": 7,
+    "samples": 1050,
+    "bytes": 3566136
   }
 ]
