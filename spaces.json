@@ -138,5 +138,19 @@
     "logs": 6,
     "samples": 240,
     "bytes": 4130666
+  },
+  {
+    "repo": "selfctrl-nemotron-explanations",
+    "title": "Self-CTRL on Nemotron",
+    "colors": [
+      "green",
+      "indigo"
+    ],
+    "description": "Nemotron 3.5 Super VL asked whether it would copy a grader's answer key: its explanations before, during and after Self-CTRL explanation training, with the rollouts they were judged against.",
+    "url": "https://lschmidttraub.github.io/selfctrl-nemotron-explanations/",
+    "updated": "2026-11-18T15:45:13Z",
+    "logs": 5,
+    "samples": 1572,
+    "bytes": 9257692
   }
 ]
