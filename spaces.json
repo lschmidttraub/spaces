@@ -152,5 +152,19 @@
     "logs": 5,
     "samples": 1572,
     "bytes": 9257692
+  },
+  {
+    "repo": "fig7-rerun-traces",
+    "title": "Fig. 7 rerun: CoT control traces",
+    "colors": [
+      "blue",
+      "gray"
+    ],
+    "description": "11 reasoning models on the five CoT controls of Fig. 7 in arXiv 2610.40939, under the paper's prompt, the paper's prompt with the first CoT token fixed, a prompt naming the <think> block, and a per-model prompt in each model's own reasoning format.",
+    "url": "https://lschmidttraub.github.io/fig7-rerun-traces/",
+    "updated": "2026-11-20T14:09:23Z",
+    "logs": 195,
+    "samples": 29250,
+    "bytes": 64014660
   }
 ]
