@@ -166,5 +166,19 @@
     "logs": 195,
     "samples": 29250,
     "bytes": 64014660
+  },
+  {
+    "repo": "nemotron-honesty",
+    "title": "Nemotron-3.5 Honesty & CoT Monitoring",
+    "colors": [
+      "green",
+      "blue"
+    ],
+    "description": "1,313 realistic reward-hacking episodes on Nemotron-3.5 Super VL testing severity, egregiousness, surveillance, subagent/user visibility, and targeted CoT monitoring.",
+    "url": "https://lschmidttraub.github.io/nemotron-honesty/",
+    "updated": "2026-11-24T11:56:08Z",
+    "logs": 12,
+    "samples": 1313,
+    "bytes": 24048605
   }
 ]
