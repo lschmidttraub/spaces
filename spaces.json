@@ -176,9 +176,9 @@
     ],
     "description": "Nemotron-3.5-120B honesty behavioral study (factorial, surveillance, knobs, audience, deception) plus B-TAP 3-judge highlighted CoT sentences and pruned live multi-turn rollouts (H, R, random controls, and cross-task Titanic A/B).",
     "url": "https://lschmidttraub.github.io/nemotron-honesty/",
-    "updated": "2026-11-25T20:01:51Z",
+    "updated": "2026-11-25T20:05:43Z",
     "logs": 26,
     "samples": 2438,
-    "bytes": 48614825
+    "bytes": 48615121
   }
 ]
