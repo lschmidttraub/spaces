@@ -174,11 +174,11 @@
       "green",
       "blue"
     ],
-    "description": "1,523 realistic reward-hacking & deception episodes on Nemotron-3.5 Super VL testing severity, egregiousness, surveillance, subagent/user visibility, targeted CoT monitoring, and non-score deception pressures.",
+    "description": "Nemotron-3.5-120B honesty behavioral study (factorial, surveillance, knobs, audience, deception) plus B-TAP 3-judge highlighted CoT sentences and pruned live multi-turn rollouts (H, R, random controls, and cross-task Titanic A/B).",
     "url": "https://lschmidttraub.github.io/nemotron-honesty/",
-    "updated": "2026-11-25T13:09:09Z",
-    "logs": 14,
-    "samples": 1523,
-    "bytes": 26851073
+    "updated": "2026-11-25T20:01:51Z",
+    "logs": 26,
+    "samples": 2438,
+    "bytes": 48614825
   }
 ]
