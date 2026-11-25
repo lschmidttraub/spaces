@@ -180,5 +180,19 @@
     "logs": 26,
     "samples": 2438,
     "bytes": 48615121
+  },
+  {
+    "repo": "prompt-variant-traces",
+    "title": "Prompt variants on the Titanic task",
+    "colors": [
+      "purple",
+      "blue"
+    ],
+    "description": "Rollouts of GPT-5.6 Sol and Nemotron 3.5 Super VL on a Titanic task whose grader holds the answer key, under 28 rewrites of the user prompt: which prompts stop the models copying the key and denying it.",
+    "url": "https://lschmidttraub.github.io/prompt-variant-traces/",
+    "updated": "2026-11-25T20:14:17Z",
+    "logs": 94,
+    "samples": 2652,
+    "bytes": 83095240
   }
 ]
