@@ -174,12 +174,12 @@
       "green",
       "blue"
     ],
-    "description": "Nemotron-3.5-120B honesty behavioral study (factorial, surveillance, knobs, audience, deception) plus B-TAP 3-judge highlighted CoT sentences and pruned live multi-turn rollouts (H, R, random controls, and cross-task Titanic A/B).",
+    "description": "Nemotron-3.5 honesty characterization, targeted CoT monitoring, deception stress-test, B-TAP highlighted sentences, pruned rollouts, and zero-shot OG Titanic OOD transfer traces",
     "url": "https://lschmidttraub.github.io/nemotron-honesty/",
-    "updated": "2026-11-25T20:05:43Z",
-    "logs": 26,
-    "samples": 2438,
-    "bytes": 48615121
+    "updated": "2026-11-26T09:22:16Z",
+    "logs": 37,
+    "samples": 2810,
+    "bytes": 65188037
   },
   {
     "repo": "prompt-variant-traces",
