@@ -194,5 +194,19 @@
     "logs": 94,
     "samples": 2652,
     "bytes": 83095240
+  },
+  {
+    "repo": "titanic-rh-btap",
+    "title": "Titanic Reward-Hacking B-TAP",
+    "colors": [
+      "red",
+      "green"
+    ],
+    "description": "Nemotron-3.5-120B Titanic (plain grader + fallback+rule) B-TAP reward-hacking study: 100 rollouts with frontier 3-judge (GPT-5.6 Sol, Claude Opus 4.7, Gemini 4 Neon) highlighted CoT sentences plus 400 held-out live pruned rollouts (0% <- 48% -> 100%).",
+    "url": "https://lschmidttraub.github.io/titanic-rh-btap/",
+    "updated": "2026-11-27T00:44:36Z",
+    "logs": 9,
+    "samples": 500,
+    "bytes": 21082242
   }
 ]
