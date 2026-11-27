@@ -208,5 +208,19 @@
     "logs": 9,
     "samples": 500,
     "bytes": 21082242
+  },
+  {
+    "repo": "fig7-tag-ablation",
+    "title": "CoT tag ablation (Qwen3.6, MiniMax)",
+    "colors": [
+      "purple",
+      "blue"
+    ],
+    "description": "Qwen3.6-27B and MiniMax-M3 on the 8 CoT controls of arXiv 2610.40939 under six prompts that keep or drop the model's own reasoning tag and the example.",
+    "url": "https://lschmidttraub.github.io/fig7-tag-ablation/",
+    "updated": "2026-11-27T14:49:39Z",
+    "logs": 96,
+    "samples": 1440,
+    "bytes": 4249665
   }
 ]
