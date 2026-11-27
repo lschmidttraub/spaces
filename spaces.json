@@ -222,5 +222,19 @@
     "logs": 96,
     "samples": 1440,
     "bytes": 4249665
+  },
+  {
+    "repo": "fig7-full-grid",
+    "title": "CoT controllability full grid",
+    "colors": [
+      "indigo",
+      "blue"
+    ],
+    "description": "Rerun of the full controllability grid of arXiv 2610.40939: 14 reasoning models x 8 CoT controls (addition, style, suppression) with a per-model prompt that names each model's own reasoning markup.",
+    "url": "https://lschmidttraub.github.io/fig7-full-grid/",
+    "updated": "2026-11-27T14:52:53Z",
+    "logs": 112,
+    "samples": 16800,
+    "bytes": 36577123
   }
 ]
