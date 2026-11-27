@@ -236,5 +236,19 @@
     "logs": 112,
     "samples": 16800,
     "bytes": 36577123
+  },
+  {
+    "repo": "cot-read-write-traces",
+    "title": "CoT Read vs. Write Traces",
+    "colors": [
+      "indigo",
+      "blue"
+    ],
+    "description": "Qwen3.6-27B Read-only, Write-only, and Combined (Read+Write) SFT traces across 4 unreadable ciphers and 4 already-readable formats: held-out translation, Level 1 atomic, Level 2 Minimal-Pair k=3 R_CoT/W_CoT, and MCQ/K&K CoT controllability.",
+    "url": "https://lschmidttraub.github.io/cot-read-write-traces/",
+    "updated": "2026-11-27T19:41:22Z",
+    "logs": 106,
+    "samples": 7800,
+    "bytes": 11611724
   }
 ]
