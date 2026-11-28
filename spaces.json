@@ -250,5 +250,19 @@
     "logs": 106,
     "samples": 7800,
     "bytes": 11611724
+  },
+  {
+    "repo": "ood-cot-control-traces",
+    "title": "OOD CoT Control Traces",
+    "colors": [
+      "blue",
+      "indigo"
+    ],
+    "description": "Full CoT and direct-Write compliance audit traces across 22 OOD formats (additive, encoding, non-deterministic) on GLM-5.1, DeepSeek-V3.2, and Qwen3.6-27B.",
+    "url": "https://lschmidttraub.github.io/ood-cot-control-traces/",
+    "updated": "2026-11-28T15:50:19Z",
+    "logs": 18,
+    "samples": 330,
+    "bytes": 1236113
   }
 ]
