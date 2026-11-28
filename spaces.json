@@ -258,11 +258,11 @@
       "blue",
       "indigo"
     ],
-    "description": "Full CoT and direct-Write compliance audit traces across 22 OOD formats (additive, encoding, non-deterministic) on GLM-5.1, DeepSeek-V3.2, and Qwen3.6-27B.",
+    "description": "Full OOD-CoT-Control benchmark traces (MCQ n=30, K&K n=30, Direct Read n=10, Direct Write n=10 across 23 tasks) on GLM-5.1, DeepSeek-V3.2, and Qwen3.6-27B.",
     "url": "https://lschmidttraub.github.io/ood-cot-control-traces/",
-    "updated": "2026-11-28T16:34:17Z",
-    "logs": 132,
-    "samples": 330,
-    "bytes": 1807078
+    "updated": "2026-11-28T17:47:18Z",
+    "logs": 270,
+    "samples": 5460,
+    "bytes": 23584532
   }
 ]
