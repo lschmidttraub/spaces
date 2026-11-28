@@ -264,5 +264,19 @@
     "logs": 270,
     "samples": 5460,
     "bytes": 23584532
+  },
+  {
+    "repo": "ood-cot-control-rw-ckpts",
+    "title": "OOD CoT Control — Read/Write Checkpoints",
+    "colors": [
+      "purple",
+      "indigo"
+    ],
+    "description": "Full OOD-CoT-Control benchmark traces (MCQ n=30, K&K n=30, Direct Read n=10, Direct Write n=10 across 23 tasks) for Qwen3.6-27B base + 12 Read/Write SFT checkpoints (caesar5, swap8, sub26 x read, write, rw_200, rw_400).",
+    "url": "https://lschmidttraub.github.io/ood-cot-control-rw-ckpts/",
+    "updated": "2026-11-28T20:22:01Z",
+    "logs": 1170,
+    "samples": 23660,
+    "bytes": 79163146
   }
 ]
